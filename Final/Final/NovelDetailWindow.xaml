@@ -1,0 +1,62 @@
+﻿<Window x:Class="Final.NovelDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final"
+        mc:Ignorable="d"
+        Background="Orange"
+        Title="NovelDetailWindow" Height="450" Width="800">
+
+    <StackPanel>
+        <Grid Height="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.05*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="2.5*"></RowDefinition>
+            </Grid.RowDefinitions >
+
+           
+            <Label Content="ID" FontSize="20" Padding="10" HorizontalAlignment="Stretch" Foreground="Azure"></Label>
+            <Label Content="Name" Grid.Row="1" FontSize="20" Padding="10" HorizontalAlignment="Stretch" Foreground="BlueViolet"></Label>
+            <Label Content="Genre" Grid.Row="2" FontSize="20" Padding="10" HorizontalAlignment="Stretch" Foreground="Chocolate"></Label>
+            <Label Content="Volume" Grid.Row="3" FontSize="20" Padding="10" HorizontalAlignment="Stretch" Foreground="CornflowerBlue"></Label>
+            <Label Content="Author" Grid.Row="4" FontSize="20" Padding="10" HorizontalAlignment="Stretch" Foreground="DarkOliveGreen"></Label>
+            <Label Content="Price" Grid.Row="5" FontSize="20" Padding="10" HorizontalAlignment="Stretch" Foreground="Khaki"></Label>
+
+            <TextBox Grid.Column="2" VerticalAlignment="Center" Margin="5" Padding="5" FontSize="20" BorderThickness="1" TextWrapping="NoWrap" Text="{Binding Path=id}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="5" Padding="5" FontSize="20" BorderThickness="1" Text="{Binding Path=name}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Margin="5" Padding="5" FontSize="20" BorderThickness="1" Text="{Binding Path=genre}"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" Margin="5" Padding="5" FontSize="20" BorderThickness="1"  Text="{Binding Path=author}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" Margin="5" Padding="5" FontSize="20" BorderThickness="1"  Text="{Binding Path=price}"></TextBox>
+            <Grid Grid.Row="6" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    
+                </Grid.ColumnDefinitions>
+                <Image Source="/download (1).jpg" Stretch="Uniform" Grid.Column=" 1" > </Image>
+            <Button Content="Save"   HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15" Margin="5" Width="100" Height="50" FontSize="15" Command="{Binding SaveCommand}" Background="DarkOrange" Foreground="Black"></Button>
+            <Button Content="Cancel"  Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15" Margin="5" Width="100" Height="50" FontSize="15" Command="{Binding CancelCommand}" Background="CadetBlue"></Button>
+            </Grid>
+
+            <ComboBox Grid.Row="3" Grid.Column="2" FontSize="20" Padding="5" Margin="5" BorderThickness="1" Background="Fuchsia" Text="{Binding Path=volume}">
+                <ComboBoxItem>volume 1</ComboBoxItem>
+                <ComboBoxItem>volume 2</ComboBoxItem>
+                <ComboBoxItem>volume 3</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+    </StackPanel>
+</Window>
